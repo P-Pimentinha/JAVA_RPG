@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.io.IOException;
 
 public class LevelOne {
-    
+
     Player player;
 
     // constructor
@@ -14,9 +14,13 @@ public class LevelOne {
 
     public void startLevelOne(Scanner y) throws Exception {
         while (true) {
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            clearConsole();
             System.out.println("Your Health: " + player.getHealth() + "write exit to exit");
             Art.levelOnePlayer();
+            
+            addDelay(3000);
+            enemyIntro();
+            
             System.out.println("What are you going to do?");
             String action = y.nextLine().toLowerCase();
 
@@ -29,6 +33,31 @@ public class LevelOne {
         
 
 
+    }
+
+    private void enemyIntro() throws Exception {
+        clearConsole();
+        Art.levelOneEnemyOne();
+        addDelay(400);
+        clearConsole();
+        Art.levelOneEnemyTwo();
+        addDelay(400);
+        clearConsole();
+         Art.levelOneEnemyOne();
+        addDelay(400);
+        clearConsole();
+        Art.levelOneEnemyTwo();
+        addDelay(400);
+        clearConsole();
+        Art.levelOneEnemyOne();
+    }
+
+    private static void clearConsole() {
+        try {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     private void exit(){
