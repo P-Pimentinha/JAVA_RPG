@@ -19,5 +19,42 @@ public class Art {
     System.out.print(" /''           |     |   |o     ||     o|   |     |           ''\\\n");
     System.out.print("[_____________[_______]--'------''------'--[_______]_____________]\n");
     System.out.println("\n");
+    System.out.println("                       Welcome Adventurer!                 ");
+    System.out.println("\n");
+  }
+
+  public static void levelOnePlayer() {
+     String warrior =
+            "      _,.        \n" +
+            "    ,` -.)       \n" +
+            "   ( _/-\\-._     \n" +
+            "  /,|`--._,-^|            ,\n" +
+            "  \\_| |`-._/||          ,'|\n" +
+            "    |  `-, / |         /  /\n" +
+            "    |     || |        /  /\n" +
+            "     `r-._||/   __   /  /\n" +
+            " __,-<_     )`-/  `./  /\n" +
+            "'  \\   `---'   \\   /  /\n" +
+            "    |           |./  /\n" +
+            "    /           //  /\n" +
+            "\\_/' \\         |/  /\n" +
+            " |    |   _,^-'/  /\n" +
+            " |    , ``  (\\/  /_\n" +
+            "  \\,.->._    \\X-=/^   \n" +
+            "  (  /   `-._//^`    \n" +
+            "   `Y-.____(__}     \n" +
+            "    |     {__)     \n" +
+            "          ()       \n";
+            
+        System.out.println(warrior);
   }
 }
+
+
+  
+   
+   
+  
+   
+ 
+ 

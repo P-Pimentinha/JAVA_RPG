@@ -25,8 +25,21 @@ public class Player implements Serializable{
   }
 
   /* Instance Methods */
+  /* With getDefenseRating */
+  // public void takeDamage(double enemyAttack) {
+  //   double damage = enemyAttack - (getDefenseRating() / 5.0);
+  //   this.health -= damage;
+  //   if (this.health <= 0) {
+  //     System.out.println("You have succumbed to the enemy, better luck next time.");
+  //     System.exit(1);
+  //   } else {
+  //     System.out.println("Current Health: " + this.health);
+  //   }
+  // }
+
+  /* Without getDefenseRating */
   public void takeDamage(double enemyAttack) {
-    double damage = enemyAttack - (getDefenseRating() / 5.0);
+    double damage = enemyAttack;
     this.health -= damage;
     if (this.health <= 0) {
       System.out.println("You have succumbed to the enemy, better luck next time.");

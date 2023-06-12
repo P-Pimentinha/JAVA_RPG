@@ -17,9 +17,18 @@ public class App {
         Scanner console = new Scanner(System.in);
         App game = new App();
         Art.homeScreen();
-        game.addDelay(1000);
+        game.addDelay(3000);
+        // System.out.print("\033[H\033[2J");
+        // System.out.flush();
+        //cleans the console
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
         game.player = game.start(console);
-        System.out.println("Health: " + game.player.getHealth() + " " + game.player.getCurrentWeapon());
+        LevelOne levelOne = new LevelOne(game.player);
+        levelOne.startLevelOne(console);
+
+
+        // System.out.println("Health: " + game.player.getHealth() + " " + game.player.getCurrentWeapon());
 
         // System.out.print("\033[H\033[2J");
         // System.out.flush();
