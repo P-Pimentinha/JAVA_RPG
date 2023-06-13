@@ -26,16 +26,21 @@ public class LevelOne {
         while (true) {
             clearConsole();
             System.out.println("Your Health: " + player.getHealth() + " (write exit to exit)");
-            Art.levelOnePlayer();     
-            System.out.println("What are you going to do?");
-            String action = y.nextLine().toLowerCase();
-            playerAction(action);
+            Art.levelOnePlayer(); 
+            while(true){
+                System.out.println("What are you going to do?");
+                String action = y.nextLine().toLowerCase();
+                if(playerAction(action)){
+                    break;
+                }
+            }
+            
             addDelay(2000);
             clearConsole();
             System.out.println("Boss health: " + boss.getHealth());
             Art.levelOneEnemyOne();
             boss.dealDamage(player);
-            System.out.println("THe Devil its Working hits Magic");
+            System.out.println("THe Devil its Working its Magic");
             addDelay(3000);
         }
         
@@ -43,7 +48,7 @@ public class LevelOne {
 
     }
 
-    private void playerAction(String action){
+    private boolean playerAction(String action){
         String act = action;
         
         
@@ -53,8 +58,11 @@ public class LevelOne {
         
         if(act.equals("attack")){
                 player.dealDamage(boss);
-                return;
-            }          
+                return true;
+            }
+        
+        
+        return false;
     }
 
     private void enemyIntro() {

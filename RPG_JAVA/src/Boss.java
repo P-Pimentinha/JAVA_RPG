@@ -27,7 +27,7 @@ public class Boss {
   public void dealDamage(Player player){
     Player playeR = player;
 
-     double randomNumberInRange = (double) (Math.random() * 6) + 5;
+     double randomNumberInRange = (double) (Math.random() * 16) + 15;
      playeR.takeDamage(randomNumberInRange);
   }
 

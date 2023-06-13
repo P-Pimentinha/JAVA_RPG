@@ -50,7 +50,7 @@ public class Player implements Serializable{
    public void dealDamage(Boss boss){
     Boss bosS = boss;
 
-     double randomNumberInRange = (double) (Math.random() * 6) + 5;
+     double randomNumberInRange = (double) (Math.random() * 16) + 15;
      bosS.takeDamage(randomNumberInRange);
   }
 
