@@ -15,8 +15,8 @@ public class Boss {
 
 
     /* Instance Methods */
-    public void takeDamage(float enemyAttack) {
-    float damage = enemyAttack;
+    public void takeDamage(double enemyAttack) {
+    double damage = enemyAttack;
     this.health -= damage;
     if (this.health <= 0) {
       System.out.println("The Enemy is Dead");
