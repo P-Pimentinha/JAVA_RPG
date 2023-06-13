@@ -44,9 +44,7 @@ public class Player implements Serializable{
     if (this.health <= 0) {
       System.out.println("You have succumbed to the enemy, better luck next time.");
       System.exit(1);
-    } else {
-      System.out.println("Current Health: " + this.health);
-    }
+    } 
   }
 
    public void dealDamage(Boss boss){

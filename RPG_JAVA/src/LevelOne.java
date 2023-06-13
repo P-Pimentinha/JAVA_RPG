@@ -19,7 +19,7 @@ public class LevelOne {
 
     
 
-    public void startLevelOne(Scanner y) throws Exception {
+    public void startLevelOne(Scanner y) {
 
         enemyIntro();
 
@@ -31,9 +31,12 @@ public class LevelOne {
             String action = y.nextLine().toLowerCase();
             playerAction(action);
             addDelay(2000);
-
-
-            
+            clearConsole();
+            System.out.println("Boss health: " + boss.getHealth());
+            Art.levelOneEnemyOne();
+            boss.dealDamage(player);
+            System.out.println("THe Devil its Working hits Magic");
+            addDelay(3000);
         }
         
 
@@ -43,13 +46,15 @@ public class LevelOne {
     private void playerAction(String action){
         String act = action;
         
-
+        
         if(act.equals("exit")){
                 System.exit(1);
             }
         
-         
-          
+        if(act.equals("attack")){
+                player.dealDamage(boss);
+                return;
+            }          
     }
 
     private void enemyIntro() {

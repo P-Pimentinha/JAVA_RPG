@@ -10,6 +10,7 @@ public class App {
 
      /* Instance Variables */
     private Player player;
+    private Boss boss;
 
     public static void main(String[] args) throws Exception {
 
@@ -22,11 +23,11 @@ public class App {
         // System.out.flush();
         //cleans the console
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-
+        game.boss = new Boss("Devil");
         game.player = game.start(console);
-        LevelOne levelOne = new LevelOne(game.player);
-        levelOne.startLevelOne(console);
 
+        LevelOne levelOne = new LevelOne(game.player, game.boss);
+        levelOne.startLevelOne(console);
 
         // System.out.println("Health: " + game.player.getHealth() + " " + game.player.getCurrentWeapon());
 

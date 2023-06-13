@@ -21,9 +21,7 @@ public class Boss {
     if (this.health <= 0) {
       System.out.println("The Enemy is Dead");
       System.exit(1);
-    } else {
-      System.out.println("Current Health: " + this.health);
-    }
+    } 
   }
 
   public void dealDamage(Player player){
