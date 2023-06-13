@@ -15,7 +15,16 @@ public class Boss {
 
 
     /* Instance Methods */
-
+    public void takeDamage(float enemyAttack) {
+    float damage = enemyAttack;
+    this.health -= damage;
+    if (this.health <= 0) {
+      System.out.println("The Enemy is Dead");
+      System.exit(1);
+    } else {
+      System.out.println("Current Health: " + this.health);
+    }
+  }
 
     /* Getters & Setters */
     public String getName() {
