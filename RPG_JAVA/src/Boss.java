@@ -16,7 +16,15 @@ public class Boss {
 
     /* Instance Methods */
 
-    
+
+    /* Getters & Setters */
+    public String getName() {
+        return name;
+    }
+
+    public float getHealth() {
+    return health;
+    }
 
     @Override
     public String toString() {
