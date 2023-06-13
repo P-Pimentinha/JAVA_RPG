@@ -26,6 +26,13 @@ public class Boss {
     }
   }
 
+  public void dealDamage(Player player){
+    Player playeR = player;
+
+     double randomNumberInRange = (double) (Math.random() * 6) + 5;
+     playeR.takeDamage(randomNumberInRange);
+  }
+
     /* Getters & Setters */
     public String getName() {
         return name;

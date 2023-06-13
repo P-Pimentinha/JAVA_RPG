@@ -38,13 +38,6 @@ public class Player implements Serializable{
   // }
 
   /* Without getDefenseRating */
-  public void dealDamage(Boss boss){
-    Boss bosS = boss;
-
-     double randomNumberInRange = (double) (Math.random() * 6) + 5;
-    bosS.takeDamage(randomNumberInRange);
-  }
-
   public void takeDamage(double enemyAttack) {
     double damage = enemyAttack;
     this.health -= damage;
@@ -54,6 +47,13 @@ public class Player implements Serializable{
     } else {
       System.out.println("Current Health: " + this.health);
     }
+  }
+
+   public void dealDamage(Boss boss){
+    Boss bosS = boss;
+
+     double randomNumberInRange = (double) (Math.random() * 6) + 5;
+     bosS.takeDamage(randomNumberInRange);
   }
 
   public void heal(double healthToAdd) {
