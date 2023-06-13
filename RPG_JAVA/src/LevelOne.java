@@ -16,23 +16,31 @@ public class LevelOne {
         while (true) {
             clearConsole();
             System.out.println("Your Health: " + player.getHealth() + "write exit to exit");
-            Art.levelOnePlayer();
             
-            addDelay(3000);
+            
             enemyIntro();
+            Art.levelOnePlayer();
             
             System.out.println("What are you going to do?");
             String action = y.nextLine().toLowerCase();
-
-            if(action.equals("exit")){
-                System.exit(1);
-            }
+            playerAction(action);
+            
 
             
         }
         
 
 
+    }
+
+    private void playerAction(String action){
+        String act = action;
+
+        if(act.equals("exit")){
+                System.exit(1);
+            }
+        
+        
     }
 
     private void enemyIntro() throws Exception {
@@ -50,6 +58,10 @@ public class LevelOne {
         addDelay(400);
         clearConsole();
         Art.levelOneEnemyOne();
+        
+        System.out.println("    I am Going To destroy You!");
+        addDelay(3000);
+        clearConsole();
     }
 
     private static void clearConsole() {
