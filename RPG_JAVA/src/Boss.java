@@ -20,7 +20,6 @@ public class Boss {
     this.health -= damage;
     if (this.health <= 0) {
       System.out.println("The Enemy is Dead");
-      System.exit(1);
     } 
   }
 

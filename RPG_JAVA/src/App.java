@@ -13,8 +13,8 @@ public class App {
     private Boss boss;
 
     public static void main(String[] args) throws Exception {
-
-        
+        ASCII artGen = new ASCII();
+       
         Scanner console = new Scanner(System.in);
         App game = new App();
         Art.homeScreen();
@@ -23,12 +23,14 @@ public class App {
         LevelOne levelOne = new LevelOne(game.player, game.boss);
         // game.addDelay(3000);
         //cleans console
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        game.clearConsole();
         
         levelOne.startLevelOne(console); 
-        
+        game.clearConsole();
+        System.out.println();
+        artGen.printTextArt("YOU LOST", ASCII.ART_SIZE_SMALL);
+        System.out.println();
 
-       
     }
 
     /* Instance Methods */
@@ -112,4 +114,12 @@ public class App {
       e.printStackTrace();
     }
   }
+
+  private void clearConsole() {
+        try {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

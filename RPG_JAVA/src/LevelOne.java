@@ -34,12 +34,13 @@ public class LevelOne {
                     break;
                 }
             }
-            
+            if(boss.getHealth() <= 0) break;
             addDelay(2000);
             clearConsole();
             System.out.println("Boss health: " + boss.getHealth());
             Art.levelOneEnemyOne();
             boss.dealDamage(player);
+            if(player.getHealth() <= 0) break;
             System.out.println("THe Devil is Working its Magic");
             addDelay(3000);
         }
