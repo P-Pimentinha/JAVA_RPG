@@ -8,6 +8,7 @@ public class Player implements Serializable{
   /* Instance Variables */
   private final String name;
   private double health;
+  private int numberOfPotions;
 
   private Weapon currentWeapon;
 
@@ -22,6 +23,7 @@ public class Player implements Serializable{
     this.name = name;
     this.currentWeapon = new Weapon("Rusty Short Sword", 3);
     this.health = 100;
+    this.numberOfPotions = 3;
   }
 
   /* Instance Methods */
@@ -54,11 +56,13 @@ public class Player implements Serializable{
      bosS.takeDamage(randomNumberInRange);
   }
 
-  public void heal(double healthToAdd) {
-    this.health += healthToAdd;
+  public void heal() {
+    this.health += getHealth() * 0.4;
+    this.numberOfPotions --;
     if (this.health > 100) {
       this.health = 100;
     }
+    System.out.println("You are now healed: " + getHealth());
   }
 
   /* Getters & Setters */
@@ -76,6 +80,10 @@ public class Player implements Serializable{
 
   public void setCurrentWeapon(Weapon currentWeapon) {
     this.currentWeapon = currentWeapon;
+  }
+
+  public int getNumberOfPotions(){
+    return this.numberOfPotions;
   }
 
   public double getHealth() {

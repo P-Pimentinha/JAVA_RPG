@@ -21,11 +21,11 @@ public class LevelOne {
 
     public void startLevelOne(Scanner y) {
 
-        enemyIntro();
+        // enemyIntro();
 
         while (true) {
             clearConsole();
-            System.out.println("Your Health: " + player.getHealth() + " (write exit to exit)");
+            System.out.println("Your Health: " + player.getHealth() + " Potions:" + player.getNumberOfPotions() + " (write exit to exit)");
             Art.levelOnePlayer(); 
             while(true){
                 System.out.println("What are you going to do?");
@@ -49,13 +49,21 @@ public class LevelOne {
     private boolean playerAction(String action){
         String act = action;
         
-        
         if(act.equals("exit")){
                 System.exit(1);
             }
         
         if(act.equals("attack")){
                 player.dealDamage(boss);
+                return true;
+            }
+        
+        if(act.equals("heal")){
+                if(player.getNumberOfPotions() <= 0){
+                    System.out.println("No Potions Available");
+                    return false;
+                }
+                player.heal();
                 return true;
             }
         
