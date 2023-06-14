@@ -40,12 +40,10 @@ public class LevelOne {
             System.out.println("Boss health: " + boss.getHealth());
             Art.levelOneEnemyOne();
             boss.dealDamage(player);
-            System.out.println("THe Devil its Working its Magic");
+            System.out.println("THe Devil is Working its Magic");
             addDelay(3000);
         }
         
-
-
     }
 
     private boolean playerAction(String action){

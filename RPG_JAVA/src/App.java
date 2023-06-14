@@ -18,24 +18,14 @@ public class App {
         Scanner console = new Scanner(System.in);
         App game = new App();
         Art.homeScreen();
-        game.addDelay(3000);
-        // System.out.print("\033[H\033[2J");
-        // System.out.flush();
-        //cleans the console
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         game.boss = new Boss("Devil");
         game.player = game.start(console);
-
         LevelOne levelOne = new LevelOne(game.player, game.boss);
-        levelOne.startLevelOne(console);
-
-        // System.out.println("Health: " + game.player.getHealth() + " " + game.player.getCurrentWeapon());
-
-        // System.out.print("\033[H\033[2J");
-        // System.out.flush();
-
-
+        game.addDelay(3000);
+        //cleans console
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         
+        levelOne.startLevelOne(console);  
        
     }
 
