@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.io.IOException;
 
-public class LevelOne {
+public class LevelOne  {
 
     Player player;
     Boss boss;
@@ -21,7 +21,7 @@ public class LevelOne {
 
     public void startLevelOne(Scanner y) {
 
-        // enemyIntro();
+        enemyIntro();
 
         while (true) {
             clearConsole();
@@ -73,6 +73,7 @@ public class LevelOne {
     }
 
     private void enemyIntro() {
+        
         clearConsole();
         Art.levelOneEnemyOne();
         addDelay(400);
@@ -88,12 +89,12 @@ public class LevelOne {
         clearConsole();
         Art.levelOneEnemyOne();
         
-        System.out.println("    I am Going To destroy You!");
-        addDelay(3000);
+        
+        addDelay(1000);
         clearConsole();
          System.out.println(" \n \n \n");
-        System.out.println("      An Evil just Showed Up to Protect The Castle!");
-        System.out.println("                   Get Ready For a Fight");
+        System.out.println("      An Evil Just Showed Up To Protect The Castle!");
+        System.out.println("                   Get Ready For a Fight!");
         addDelay(4000);
         clearConsole();
         

@@ -21,14 +21,13 @@ public class App {
         game.boss = new Boss("Devil");
         game.player = game.start(console);
         LevelOne levelOne = new LevelOne(game.player, game.boss);
-        // game.addDelay(3000);
+        game.addDelay(3000);
         //cleans console
         game.clearConsole();
-        
         levelOne.startLevelOne(console); 
         game.clearConsole();
         System.out.println();
-        artGen.printTextArt("YOU LOST", ASCII.ART_SIZE_SMALL);
+        artGen.printTextArt("YOU  LOST", ASCII.ART_SIZE_SMALL);
         System.out.println();
 
     }
